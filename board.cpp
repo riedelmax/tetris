@@ -6,7 +6,7 @@ class Board
     // koordinatenfeld 0 <= x <=  9
     //                 0 <= y <= 19
 
-    private currentItem;
+    private Item currentItem;
     private uint8_t b[W][H];
     private Controller ctrl;
 
