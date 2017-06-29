@@ -16,9 +16,16 @@ void Board::run()
         currentItem.sink();
         
         // check if item is moved
-        while(ctrl.isMoving())
+        while(ctrl.isMoving() != 0)
         {
-
+            if(ctrl.isMoving() == -1)
+            {
+                currentItem.left();
+            }
+            else
+            {
+                currentItem.right();
+            }
         }
 
         // check if item is dropped

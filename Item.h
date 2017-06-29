@@ -13,6 +13,8 @@ class item
     enum Orientation {UP, LEFT, DOWN, RIGHT};
     enum ItemType {SQUARE, L_LEFT, L_RIGHT, S_LEFT, S_RIGHT, BAR, T};
     void sink();
+    void left();
+    void right();
 
     uint8_t getX() {return x;};
     uint8_t getY() {return y;};
