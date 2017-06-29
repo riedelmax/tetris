@@ -14,6 +14,10 @@ class item
     enum ItemType {SQUARE, L_LEFT, L_RIGHT, S_LEFT, S_RIGHT, BAR, T};
     void sink();
 
+    uint8_t getX() {return x;};
+    uint8_t getY() {return y;};
+    ItemType getType() {return type;};
+    Orientation getOrientation() {return orientation;};
 }
 
 #ENDIF
