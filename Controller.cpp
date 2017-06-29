@@ -2,8 +2,8 @@
 
 Controller::Controller()
 {
-    dropButton = gpio_msp432_pin(PORT_PIN(3, 5)); //S2
-    spinButton = gpio_msp432_pin(PORT_PIN(5, 1)); //S1
+    dropButton = gpio_msp432_pin(PORT_PIN(3, 5)); //S2 Button
+    spinButton = gpio_msp432_pin(PORT_PIN(5, 1)); //S1 Button
 
     dropButton.gpioMode(GPIO::INPUT | GPIO::PULLDOWN);
     spinButton.gpioMode(GPIO::INPUT | GPIO::PULLDOWN);
