@@ -1,15 +1,14 @@
 #include "Board.h"
 //
 
-Board::Board(Controller ctrl)
+Board::Board(Controller controller) : ctrl(controller)
 {
     init();
-    this.ctrl = ctrl;
 }
 
 void Board::run()
 {
-    draw();
+    //iDraw.drawBoard(*this);
     bool lost = false;
     while(!lost)
     {
@@ -52,14 +51,23 @@ void Board::drop()
 */
 bool Board::checkCollision()
 {
-    bool item[5][5] = ItemDrawer.items[currentItem.getType()][currentItem.getOrientation()];
+    bool item[5][5];
+    Item::ItemType type = currentItem.getType();
+    Item::Orientation ori = currentItem.getOrientation();
+    for(int i = 0; i < 5; i++)
+    {
+        for(int j = 0; j < 5; j++)
+        {
+            item[i][j] = iDraw.items[type][ori][i][j];
+        }
+    }
     int y = currentItem.getY() + 1;
     int x = currentItem.getX();
     for(int i = x; i < x+5; i++)
     {
         for(int j = y; j < y+5; j++)
         {
-            if((board[i][j] != 0) && (item[i-x[j-y] != 0]))
+            if((b[i][j] != 0) && (item[i-x][j-y] != 0))
             {
                 return false;
             }

@@ -1,24 +1,19 @@
-<<<<<<< HEAD
+
 #include "Item.h"
 #include <cstdlib>
 #include <ctime>
-//
-=======
-include "Item.h"
-include "Board.h"
-include <cstdlib>
-include <ctime>
->>>>>>> branch 'master' of https://github.com/riedelmax/tetris.git
 
-namespace std;
+#include "Board.h"
+
+using namespace std;
 
 Item::Item()
 {
     x = 5;
     y = 0;
     srand(time(0));
-    type = rand() / (RAND_MAX/7));
-    orientation = Orientation.UP;
+    type = (ItemType) ( rand() / (RAND_MAX/7));
+    orientation = Orientation::UP;
 }
 
 void Item::left()
@@ -41,3 +36,9 @@ void Item::sink()
 {
     y++;
 }
+
+
+uint8_t Item::getX() {return x;};
+uint8_t Item::getY() {return y;};
+Item::ItemType Item::getType() {return type;};
+Item::Orientation Item::getOrientation() {return orientation;};
