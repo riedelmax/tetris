@@ -2,7 +2,7 @@
 //
 
 // Graphic library context
-Graphics_Context g_sContext;
+extern Graphics_Context g_sContext;
 
 // Graphics display structure
 extern const Graphics_Display g_st7735s;
@@ -31,8 +31,9 @@ ItemDrawer::ItemDrawer()
 
 void ItemDrawer::drawBoard(Board& b)
 {
+    tRectangle rect = {0, 0, 127, 127};
     Graphics_setForegroundColor(&g_sContext, GRAPHICS_COLOR_RED);
-    //Graphics_drawRectangle(&g_sContext, 0,0, 127, 127);
+    Graphics_drawRectangle(&g_sContext, &rect);
 }
 
 void ItemDrawer::drawItem()
