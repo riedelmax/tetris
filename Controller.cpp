@@ -1,15 +1,10 @@
 #include "Controller.h"
 //
 
-Controller::Controller()
+Controller::Controller() : dropButton(PORT_PIN(3, 5)), spinButton(PORT_PIN(5, 1)), joy_X(15)
 {
-    dropButton = gpio_msp432_pin(PORT_PIN(3, 5)); //S2 Button
-    spinButton = gpio_msp432_pin(PORT_PIN(5, 1)); //S1
-
-    dropButton.gpioMode(GPIO::INPUT | GPIO::PULLDOWN);
-    spinButton.gpioMode(GPIO::INPUT | GPIO::PULLDOWN);
-
-    joy_X = adc14_msp432_channel(15);
+    dropButton.gpioMode(GPIO::INPUT | GPIO::PULLDOWN); //S1
+    spinButton.gpioMode(GPIO::INPUT | GPIO::PULLDOWN); //S2
     // configure channel with 10 bit resolution
     joy_X.adcMode(ADC::ADC_10_BIT);
     joy_X_Voffset = joy_X.adcReadVoltage();
@@ -27,9 +22,9 @@ bool Controller::spinButtonPressed()
 
 int Controller::isMoving()
 {
-    if ((volt - volt_offset) < -0.2)
+    if ((joy_X.adcReadVoltage() - joy_X_Voffset) < -0.2)
         return -1; //left
-    if ((volt - volt_offset) > 0.2)
+    if ((joy_X.adcReadVoltage() - joy_X_Voffset) > 0.2)
         return 1; //right
 
     return 0; //nothing
