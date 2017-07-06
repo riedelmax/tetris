@@ -1,4 +1,3 @@
-
 #include "Board.h"
 
 Board::Board(Controller ctrl)

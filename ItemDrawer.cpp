@@ -1,4 +1,3 @@
-
 #include "ItemDrawer.h"
 
 static bool ItemDrawer::items[7 /* itemtype */][4 /* orientation */][5][5]
