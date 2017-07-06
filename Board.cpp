@@ -9,6 +9,7 @@ Board::Board(Controller ctrl)
 
 void Board::run()
 {
+    draw();
     bool lost = false;
     while(!lost)
     {

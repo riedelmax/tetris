@@ -14,5 +14,6 @@ class Board
         Board(Controller ctrl);
         void run();
         bool checkCollision();
+        void draw();
         
 };

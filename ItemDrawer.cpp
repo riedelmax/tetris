@@ -1,7 +1,7 @@
 
 #include "ItemDrawer.h"
 
-static bool ItemDrawer::items[7 /* itemtype */][4 /* orientation */][5][5]
+static bool ItemDrawer::items[NB_TYPES /* itemtype */][NB_ORI /* orientation */][5][5]
 {
     { // square
         {
