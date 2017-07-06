@@ -1,10 +1,9 @@
+#ifndef ITEMDRAWER_H
+#define ITEMDRAWER_H
+//
 
-
-#IFNDEF ITEMDRAWER_H
-#DEFINE ITEMDRAWER_H
-
-#DEFINE NB_TYPES 7
-#DEFINE NB_ORI 4
+#define NB_TYPES 7
+#define NB_ORI 4
 
 class ItemDrawer
 {
@@ -17,4 +16,4 @@ class ItemDrawer
 
 };
 
-#ENDIF
+#endif

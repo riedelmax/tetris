@@ -1,5 +1,9 @@
-#DEFINE W 10
-#DEFINE H 20
+#define W 10
+#define H 20
+//
+
+#include "Item.h"
+#include "Controller.h"
 
 class Board
 {

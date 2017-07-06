@@ -1,14 +1,11 @@
-#IFNDEF ITEM_H
-#DEFINE ITEM_H
+#ifndef ITEM_H
+#define ITEM_H
+//
 
-class item
+#include <stdint.h>
+
+class Item
 {
-    private:
-    Orientation orientation;
-    ItemType type;
-    uint8_t x;
-    uint8_t y;
-
     public:
     enum Orientation {UP, LEFT, DOWN, RIGHT};
     enum ItemType {SQUARE, L_LEFT, L_RIGHT, S_LEFT, S_RIGHT, BAR, T};
@@ -20,6 +17,16 @@ class item
     uint8_t getY() {return y;};
     ItemType getType() {return type;};
     Orientation getOrientation() {return orientation;};
-}
 
+<<<<<<< HEAD
+    private:
+    Orientation orientation;
+    ItemType type;
+    uint8_t x;
+    uint8_t y;
+};
+
+#endif
+=======
 #ENDIF
+>>>>>>> branch 'master' of https://github.com/riedelmax/tetris.git

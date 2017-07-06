@@ -1,5 +1,5 @@
-
 #include "ItemDrawer.h"
+//
 
 static bool ItemDrawer::items[NB_TYPES /* itemtype */][NB_ORI /* orientation */][5][5]
 {
